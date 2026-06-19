@@ -1,0 +1,19 @@
+<nav class="menu">
+  <!-- Solo visible si está autenticado -->
+  <ng-container *ngIf="isLoggedIn$ | async">
+    <a routerLink="/inicio">Inicio</a>
+    <a routerLink="/juegos">Juegos</a>
+    <a routerLink="/noticias">Noticias</a>
+    <a routerLink="/contacto">Contacto</a>
+    <button (click)="logout()" class="btn-logout">Cerrar Sesión</button>
+  </ng-container>
+
+  <!-- Si NO está autenticado, mostrar enlace a login -->
+  <ng-container *ngIf="!(isLoggedIn$ | async)">
+    <a routerLink="/login">Iniciar Sesión</a>
+  </ng-container>
+</nav>
+
+<div class="contenido">
+  <router-outlet></router-outlet>
+</div>

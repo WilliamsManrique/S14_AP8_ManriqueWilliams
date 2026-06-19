@@ -1,0 +1,18 @@
+h1{
+    font-size:3rem;
+    color:#00ff88;
+    margin-bottom:20px;
+}
+
+img{
+    width:80%;
+    max-width:800px;
+    border-radius:15px;
+    box-shadow:0 0 25px rgba(0,255,136,.4);
+    margin-bottom:20px;
+}
+
+p{
+    font-size:1.2rem;
+    line-height:1.8;
+}

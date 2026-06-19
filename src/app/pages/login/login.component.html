@@ -1,0 +1,58 @@
+<div class="login-wrapper">
+  <div class="login-card">
+    <div class="login-header">
+      <h2>🔐 Bienvenido</h2>
+      <p>Inicia sesión para acceder a tu cuenta</p>
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="email">Correo electrónico</label>
+        <div class="input-icon">
+          <span class="icon">📧</span>
+          <input
+            id="email"
+            type="email"
+            formControlName="email"
+            placeholder="ejemplo@correo.com"
+            [class.is-invalid]="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
+          />
+        </div>
+        <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="error-messages">
+          <small *ngIf="loginForm.get('email')?.errors?.['required']">⚠️ Correo obligatorio</small>
+          <small *ngIf="loginForm.get('email')?.errors?.['email']">⚠️ Formato de correo inválido</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Contraseña</label>
+        <div class="input-icon">
+          <span class="icon">🔒</span>
+          <input
+            id="password"
+            type="password"
+            formControlName="password"
+            placeholder="Mínimo 6 caracteres"
+            [class.is-invalid]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
+          />
+        </div>
+        <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="error-messages">
+          <small *ngIf="loginForm.get('password')?.errors?.['required']">⚠️ Contraseña obligatoria</small>
+          <small *ngIf="loginForm.get('password')?.errors?.['minlength']">⚠️ Contraseña mínima de 6 caracteres</small>
+        </div>
+      </div>
+
+      <button type="submit" class="btn-login" [disabled]="loginForm.invalid">
+        Iniciar Sesión
+      </button>
+
+      <div *ngIf="errorMessage" class="alert-error">
+        ❌ {{ errorMessage }}
+      </div>
+    </form>
+
+    <div class="login-footer">
+      <p>¿No tienes cuenta? <a href="#">Regístrate</a></p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+h2{
+    color:#00ff88;
+    margin-bottom:20px;
+}
+
+ul{
+    list-style:none;
+}
+
+li{
+    background:#1f2937;
+    color:white; /* <- agregar */
+    margin:15px auto;
+    padding:15px;
+    width:300px;
+    border-radius:10px;
+    transition:.3s;
+}
+
+li:hover{
+    transform:scale(1.05);
+    background:#00ff88;
+    color:black;
+}

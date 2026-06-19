@@ -1,0 +1,14 @@
+h2{
+    color:#00ff88;
+    margin-bottom:20px;
+}
+
+p{
+    background:#1f2937;
+    color:white; /* <- agregar */
+    width:350px;
+    margin:15px auto;
+    padding:15px;
+    border-radius:10px;
+    font-size:18px;
+}
